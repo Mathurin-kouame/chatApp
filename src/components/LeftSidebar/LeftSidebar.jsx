@@ -15,6 +15,11 @@ const LeftSideBar = () => {
           <h2>chatApp</h2>
           <div className="menu">
             <img src={menu} alt="" />
+            <div className="sud-menu">
+              <p>Edit profile</p>
+              <hr />
+              <p>déconnecter</p>
+            </div>
           </div>
         </div>
         <div className="ls-rearch">

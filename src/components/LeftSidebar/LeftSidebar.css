@@ -53,3 +53,31 @@
     height: 70%;
     overflow-y: scroll;
 }
+.ls-nav .menu {
+    position: relative;
+    padding: 10px 0px;
+}
+.menu .sud-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 130px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+    display: none;
+}
+.sud-menu hr {
+    border: none;
+    height: 1px;
+    background: #a4a4a4;
+    margin: 8px 0px;
+}
+.sud-menu p {
+    cursor: pointer;
+    font-size: 14px;
+}
+.menu:hover .sud-menu {
+    display: block;
+}

@@ -25,7 +25,7 @@ const RightSideBar = () => {
           <img src= {photo } alt="" />
         </div>
       </div>
-      <button>se déconnecter</button>
+      <button>Déconnecter</button>
     </div>
   )
 }
