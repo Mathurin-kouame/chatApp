@@ -2,20 +2,32 @@
 import React, { useState } from 'react'
 import './Login.css'
 import iconChat from '../../assets/iconChat.png'
+import { signup } from '../../config/firebase'
 
 
 const Login = () => {
-const [currState, setCurrState] = useState("Inscription")
+  const [ currState, setCurrState ] = useState("Inscription");
+  const [ username, setUsername ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
+
+  const onSubmitHandler = (event) => {
+    event.preventDefaut();
+    if (currState === "Inscription") {
+      signup(username, email, password);
+      
+    }
+  }
 
   return (
     <div className='login'>
       <h1>ChatApp</h1>
       <img src={iconChat} alt="" className='iconChat' />
-      <form className="login-form">
+      <form onSubmit={onSubmitHandler} className="login-form">
         <h2>{currState}</h2>
-        { currState === "Inscription"? <input type="text" placeholder='Nom utilisateur' className='form-input' required />: null}
-        <input type="email" placeholder='Adresse mail' className='form-input' />
-        <input type="password" placeholder='votre mot de passe' className='form-input' />
+        { currState === "Inscription"? <input onChange={(e)=>setUsername(e.target.value)} value={username} type="text" placeholder='Nom utilisateur' className='form-input' required />: null}
+        <input onChange={(e) =>setEmail(e.target.value)} value={email} type="email" placeholder='Adresse mail' className='form-input' />
+        <input onChange={(e)=>setPassword(e.target.value)} value={password} type="password" placeholder='votre mot de passe' className='form-input' />
         <button type='submit'>{currState === "Inscription"?"créer un compte":"Se connecter"}</button>
         <div className="login-term">
           <input type="checkbox" />
