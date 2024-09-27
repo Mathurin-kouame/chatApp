@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ /* eslint-disable no-unused-vars */
 import React from 'react'
 import './Chat.css'
 import ChatBox from '../../components/ChatBox/ChatBox'
